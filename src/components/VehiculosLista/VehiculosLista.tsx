@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Counter from "../Counter";
 
 interface Vehiculo {
   id: number;
@@ -44,7 +45,7 @@ const VehiculosList = () => {
   };
 
   const handleCancelar = () => {
-    setShowModal(false)
+    setShowModal(false);
     setNewVehiculo({
       tipo: "",
       marca: "",
@@ -52,8 +53,8 @@ const VehiculosList = () => {
       anio: 0,
       color: "",
       imagen: "",
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,18 +83,15 @@ const VehiculosList = () => {
     <div className="container-fluid px-4 py-5 brutalist-container">
       <div className="d-flex justify-content-between align-items-center mb-5">
         <h2 className="brutalist-title">VEHÍCULOS</h2>
-        <button 
-          className="brutalist-button"
-          onClick={() => setShowModal(true)}
-        >
+        <button className="brutalist-button" onClick={() => setShowModal(true)}>
           + NUEVO VEHÍCULO
         </button>
       </div>
-
+      <Counter />
       <div className="row g-4">
         {vehiculos.map((vehiculo) => (
           <div key={vehiculo.id} className="col-md-4 col-sm-6 col-12">
-            <div 
+            <div
               className="brutalist-card"
               onClick={() => handleCardClick(vehiculo.id)}
               style={{ cursor: "pointer" }}
@@ -184,7 +182,7 @@ const VehiculosList = () => {
                   type="button"
                   className="brutalist-button cancel"
                   onClick={() => handleCancelar()}
-                > 
+                >
                   CANCELAR
                 </button>
               </div>
