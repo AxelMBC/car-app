@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import Counter from "../Counter";
+import Counter from "../Counter";
 
 interface Vehiculo {
   id: number;
@@ -87,7 +87,7 @@ const VehiculosList = () => {
           + NUEVO VEHÍCULO
         </button>
       </div>
-      {/* <Counter /> */}
+      <Counter />
       <div className="row g-4">
         {vehiculos.map((vehiculo) => (
           <div key={vehiculo.id} className="col-md-4 col-sm-6 col-12">
